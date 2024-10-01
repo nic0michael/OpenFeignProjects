@@ -1,4 +1,6 @@
-## OpenFeign Spring Boot Example Project
+## OpenFeign Spring Boot Example Project  
+We have two Spring Boot Micro Services as two Maven Projects. \
+Which you can run in STS, Eclipse, or IntelliJ
 
 ---
 ## CustomerService - Spring Boot Micro-service with OpenFeign Client
