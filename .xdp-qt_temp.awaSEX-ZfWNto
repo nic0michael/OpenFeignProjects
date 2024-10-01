@@ -234,4 +234,4 @@ The `CustomerServiceImpl` class implements the `CustomerService` interface and u
 This project is an example of how to use Spring Boot and OpenFeign to create a service that communicates with another microservice. It demonstrates basic operations like fetching and creating customers while utilizing OpenFeign to simplify REST communication.
 ```
 
-
+This `README.md` file provides an overview of the project, its structure, and how it works, along with the code for each class and interface used.
