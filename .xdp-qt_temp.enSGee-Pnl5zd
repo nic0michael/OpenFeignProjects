@@ -1,6 +1,6 @@
 ## OpenFeign Spring Boot Example Project  
 We have two Spring Boot Micro Services as two Maven Projects. \
-Which you can run in STSEclipse
+Which you can run in STS, Eclipse, or IntelliJ
 
 ---
 ## CustomerService - Spring Boot Micro-service with OpenFeign Client
@@ -17,10 +17,15 @@ This project demonstrates a Spring Boot application (`CustomerServiceApplication
 
 ## Prerequisites
 
-- Java 8 or higher
+- Java 17 or higher
 - Maven
 - Spring Boot 2.5+
-- OpenFeign dependency for creating REST clients
+- OpenFeign dependency for creating REST clients  
+
+## Project POM Dependencies
+```xml
+
+```
 
 ## Project Structure
 

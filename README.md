@@ -17,10 +17,41 @@ This project demonstrates a Spring Boot application (`CustomerServiceApplication
 
 ## Prerequisites
 
-- Java 8 or higher
+- Java 17 or higher
 - Maven
 - Spring Boot 2.5+
-- OpenFeign dependency for creating REST clients
+- OpenFeign dependency for creating REST clients  
+
+## Project POM Dependencies
+```xml
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-openfeign -->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-openfeign</artifactId>
+    <version>4.1.1</version>
+</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+```
 
 ## Project Structure
 
