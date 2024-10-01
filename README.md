@@ -1,7 +1,7 @@
 ## OpenFeign Spring Boot Example Project
 
-```markdown
-# Customer Service - Spring Boot Application with OpenFeign Client
+---
+## Customer Service - Spring Boot Application with OpenFeign Client
 
 This project demonstrates a Spring Boot application (`CustomerServiceApplication`) using OpenFeign to communicate with another Spring Boot service (a `user-service`). The application contains REST controllers, DTOs, service classes, and Feign clients to handle customer data through HTTP requests.
 
@@ -35,6 +35,7 @@ za/nico/customer/
 │   └── CustomerServiceImpl.java
 └── CustomerServiceApplication.java
 ```
+
 
 ## Description
 
