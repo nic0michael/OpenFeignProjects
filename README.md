@@ -230,6 +230,9 @@ public class CustomerServiceImpl implements CustomerService {
 
 The `CustomerServiceImpl` class implements the `CustomerService` interface and uses the Feign client (`CustomerClient`) to handle communication with the `user-service`.
 
+## Customer Stub Service 
+This is a Mock Spring Boot Micro-Service that returns mocked values so that the above Spring Boot Project can test its ability to use a Feign Client to communicate with this Micro-service. 
+
 ## Conclusion
 
 This project is an example of how to use Spring Boot and OpenFeign to create a service that communicates with another microservice. It demonstrates basic operations like fetching and creating customers while utilizing OpenFeign to simplify REST communication.
