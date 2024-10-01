@@ -230,7 +230,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 The `CustomerServiceImpl` class implements the `CustomerService` interface and uses the Feign client (`CustomerClient`) to handle communication with the `user-service`.
 
-## Customer Stub Spring Boot Micro-Service 
+## Customer Stub - Spring Boot Micro-Service 
 This is a Mock Spring Boot Micro-Service that returns mocked values so that the above Spring Boot Project can test its ability to use a Feign Client to communicate with this Micro-service. 
 
 ## Conclusion
