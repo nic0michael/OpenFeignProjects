@@ -20,11 +20,6 @@ public class CustomerRestController {
 	@Autowired
 	private CustomerService service;
 
-//	public CustomerRestController(CustomerService service) {
-//		this.service = service;
-//	}
-	
-
     @GetMapping("/{id}")
     public ResponseEntity<CustomerDto> getUserById(@PathVariable("id") Long id) {
     	CustomerDto customer = service.findCustomerById(id);
@@ -32,7 +27,7 @@ public class CustomerRestController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<CustomerDto> createUser(@RequestBody CustomerDto customer) {
+    public ResponseEntity<CustomerDto> createCustomer(@RequestBody CustomerDto customer) {
     	CustomerDto customerDto = service.createCustomer(customer);
         return ResponseEntity.status(HttpStatus.CREATED).body(customerDto);
     }
