@@ -1,15 +1,13 @@
 package za.nico.customer.services;
 
 import org.springframework.stereotype.Service;
-
 import za.nico.customer.dtos.CustomerDto;
 import za.nico.customer.feignclients.CustomerClient;
 
 @Service
 public class CustomerServiceImpl implements CustomerService{
 	
-	private final CustomerClient customerClient;
-	
+	private final CustomerClient customerClient;	
 	
 	public CustomerServiceImpl(CustomerClient customerClient) {
 		super();
@@ -24,6 +22,7 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public CustomerDto createCustomer(CustomerDto customer) {
+		
 		return customerClient.createCustomer(customer);
 	}
 
