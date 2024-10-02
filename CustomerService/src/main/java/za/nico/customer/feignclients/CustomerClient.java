@@ -8,7 +8,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import za.nico.customer.dtos.CustomerDto;
 
-@FeignClient(name = "user-service", url = "http://localhost:8081/customers")
+/**
+ *  You can use hardcoded values:
+ *  @FeignClient(name = "user-service", url = "http://localhost:8081/customers")
+ *  
+ *  Or values from properties file :
+ *  @FeignClient(name = "${customer.client.service}", url = "${customer.client.url}")
+
+ */
+@FeignClient(name = "${customer.client.service}", url = "${customer.client.url}")
 public interface CustomerClient {
 
     @GetMapping("/{id}")
@@ -16,6 +24,5 @@ public interface CustomerClient {
 
     @PostMapping("/")
     CustomerDto createCustomer(@RequestBody CustomerDto customer);
-
 
 }
