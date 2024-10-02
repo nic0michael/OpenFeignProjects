@@ -24,7 +24,6 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public CustomerDto createCustomer(CustomerDto customer) {
-		
 		return customerClient.createCustomer(customer);
 	}
 
