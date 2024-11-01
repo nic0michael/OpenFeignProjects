@@ -24,9 +24,16 @@ public class CustomerRestController {
 	}
 	
 
+    @GetMapping("/")
+    public ResponseEntity<CustomerDto> getUser( ) {
+        Long id = 7007L;
+    	CustomerDto customer = service.findCustomerById(id);
+        return ResponseEntity.ok(customer);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<CustomerDto> getUserById(@PathVariable("id") Long id) {
-    	CustomerDto customer = service.findCustomerById(id);
+        CustomerDto customer = service.findCustomerById(id);
         return ResponseEntity.ok(customer);
     }
 

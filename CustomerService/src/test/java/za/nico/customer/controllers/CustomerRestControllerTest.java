@@ -1,30 +1,56 @@
 package za.nico.customer.controllers;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.web.servlet.MockMvc;
 
 import za.nico.customer.dtos.CustomerDto;
 
 
-
-@WebMvcTest(CustomerRestController.class)
+@SpringBootTest
 public class CustomerRestControllerTest {
 	
-    @Autowired
-    private MockMvc mockMvc;
+	
     
     @Autowired
 	private CustomerRestController customerRestController;
     
     
     @Test
-    public void getTest() {
+    public void getUserByIdTest() {
     	Long id = 7007L;
-		ResponseEntity<CustomerDto> customer = customerRestController.getUserById(id );
+		ResponseEntity<CustomerDto> response = customerRestController.getUserById(id );
+		assertNotNull(response);
+        assertThat(response.getStatusCode().is2xxSuccessful()).isTrue();
+        assertThat(response.getBody()).isNotNull();
+        CustomerDto customer = response.getBody();
+		Long theId = customer.getId();
+		 assertThat(theId).isEqualTo(id);		
+    }
+    
+    @Test
+    public void createCustomerTest(){
+    	CustomerDto customer = makeCustomerDto();
+		ResponseEntity<CustomerDto> response = customerRestController.createCustomer(customer );
+		assertNotNull(response);
+        assertThat(response.getStatusCode().is2xxSuccessful()).isTrue();
+        assertThat(response.getBody()).isNotNull();
+        CustomerDto theCustomer = response.getBody();
+        Long id = customer.getId();
+        Long theId = theCustomer.getId();
+        assertThat(theId).isEqualTo(id);	
 		
     }
+
+	private CustomerDto makeCustomerDto() {
+		CustomerDto customer = new CustomerDto();
+		customer.setEmail("rack@ripper.org");
+		customer.setId(9999L);
+		customer.setName("Jack the Ripper");
+		return customer;
+	}
 
 }
