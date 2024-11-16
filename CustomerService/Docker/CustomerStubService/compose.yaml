@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+    stubservice:
+      build:
+        context: stubservice
+        dockerfile: Dockerfile
+      image: stubservice:latest
+      ports:
+        - "127.0.0.1:8981:8781"
+      restart: unless-stopped
+      networks:
+        cust-network:
+
+networks:
+  cust-network:

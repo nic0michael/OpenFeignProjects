@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+    stubservice:
+      build:
+        context: stubservice
+        dockerfile: ../Docker/CustomerStubService/Dockerfile
+      image: stubservice:latest
+      ports:
+        - "8981:8981"  # Maps 8981 in the container to 8991 on the host
+      restart: unless-stopped
+      networks:
+        - cust-network
+
+networks:
+  cust-network:

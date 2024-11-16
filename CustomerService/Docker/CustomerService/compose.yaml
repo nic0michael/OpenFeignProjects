@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+    customerservice:
+      build:
+        context: customerservice
+        dockerfile: Dockerfile
+      image: customerservice:latest
+      ports:
+        - "8780:8980"
+      restart: unless-stopped
+      networks:
+        cust-network:
+
+networks:
+  cust-network:
