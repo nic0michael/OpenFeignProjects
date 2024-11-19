@@ -1,10 +1,6 @@
 #!/bin/bash
 
-# Create network
-echo Create netword internalnetwork
-docker network create --driver bridge internalnetwork || {
-  echo "Network internalnetwork already exists"
-}
+
 
 
 # Define directories and image names
@@ -15,6 +11,12 @@ CUSTOMER_STUB_SERVICE_DIR="$BASE_DIR/CustomerStubService"
 CUSTOMER_SERVICE_IMAGE="customer-service:latest"
 CUSTOMER_STUB_SERVICE_IMAGE="customer-stub-service:latest"
 
+
+SERVICE_NAME="CustomerService"
+IMAGE_NAME="customer-service:latest"
+COMPOSE_FILE="docker-compose-custservice.yml"
+
+
 # Build Docker images
 echo "Building Docker image for CustomerService..."
 docker build -t $CUSTOMER_SERVICE_IMAGE $CUSTOMER_SERVICE_DIR || {
@@ -22,10 +24,17 @@ docker build -t $CUSTOMER_SERVICE_IMAGE $CUSTOMER_SERVICE_DIR || {
   exit 1
 }
 
-echo "Building Docker image for CustomerStubService..."
-docker build -t $CUSTOMER_STUB_SERVICE_IMAGE $CUSTOMER_STUB_SERVICE_DIR || {
-  echo "Failed to build CustomerStubService image"
+
+echo "Docker image : CustomerService built successfully!"
+
+
+# Start service
+echo "Starting $SERVICE_NAME using $COMPOSE_FILE..."
+
+#docker compose -f $COMPOSE_FILE up -d || {
+docker-compose -f docker-compose-custservice.yml up -d ||{
+  echo "Failed to start $SERVICE_NAME"
   exit 1
 }
 
-echo "Docker images built successfully!"
+echo "$SERVICE_NAME is running successfully!"

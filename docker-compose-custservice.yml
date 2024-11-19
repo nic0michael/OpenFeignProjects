@@ -1,0 +1,16 @@
+version: '3.8'
+
+networks:
+  internalnetwork:
+    external: true
+
+services:
+  custservice:
+    container_name: CustContainer-custservice
+    build:
+      context: ./CustomerService
+      dockerfile: Dockerfile
+    networks:
+      - internalnetwork
+    ports:
+      - "8980:8980"

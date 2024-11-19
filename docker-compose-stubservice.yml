@@ -1,0 +1,16 @@
+version: '3.8'
+
+networks:
+  internalnetwork:
+    external: true
+
+services:
+  stubservice:
+    container_name: CustContainer-stubservice
+    build:
+      context: ./CustomerStubService
+      dockerfile: Dockerfile
+    networks:
+      - internalnetwork
+    ports:
+      - "8981:8981"
