@@ -2,7 +2,7 @@
 
 # Stop CustomerService
 echo "Stopping CustomerService..."
-docker-compose -f docker-compose-custservice.yml down || {
+docker compose -f docker-compose-custservice.yml down || {
   echo "Failed to stop CustomerService"
 }
 

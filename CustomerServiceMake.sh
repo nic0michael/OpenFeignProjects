@@ -32,7 +32,7 @@ echo "Docker image : CustomerService built successfully!"
 echo "Starting $SERVICE_NAME using $COMPOSE_FILE..."
 
 #docker compose -f $COMPOSE_FILE up -d || {
-docker-compose -f docker-compose-custservice.yml up -d ||{
+docker compose up -d ||{
   echo "Failed to start $SERVICE_NAME"
   exit 1
 }

@@ -14,7 +14,7 @@ docker build -t $IMAGE_NAME "./$SERVICE_NAME" || {
 
 # Start service
 echo "Starting $SERVICE_NAME using $COMPOSE_FILE..."
-docker-compose up -d || {
+docker compose up -d || {
   echo "Failed to start $SERVICE_NAME"
   exit 1
 }

@@ -2,7 +2,7 @@
 
 # Stop CustomerStubService
 echo "Stopping CustomerService..."
-docker-compose down || {
+docker compose down || {
   echo "Failed to stop CustomerService"
 }
 
